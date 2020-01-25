@@ -1,0 +1,7 @@
+ntp server 2.2.2.2
+ntp server 3.3.3.3
+ntp server 4.4.4.4
+ntp server 5.5.5.5
+ntp server 6.6.6.6
+
+

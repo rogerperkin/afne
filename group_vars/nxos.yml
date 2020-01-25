@@ -1,0 +1,4 @@
+---
+# Default NXOS Connectivity Variables
+
+ansible_network_os: "nxos"

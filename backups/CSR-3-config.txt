@@ -1,0 +1,187 @@
+Building configuration...
+
+Current configuration : 3670 bytes
+!
+! Last configuration change at 22:52:24 UTC Tue Jan 21 2020
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR-3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name roger.local
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2793600846
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2793600846
+ revocation-check none
+ rsakeypair TP-self-signed-2793600846
+!
+!
+crypto pki certificate chain TP-self-signed-2793600846
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32373933 36303038 3436301E 170D3230 30313231 32323532 
+  33345A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 37393336 
+  30303834 36308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100B83C DF29FE79 218C078D A9C9AB58 7C72D15B 9921DF6D 7B440DC0 
+  473AE2C7 6F5FB5CE 479EC44F C6281357 71892881 05931B3F 2E879C28 84CE7713 
+  0B02924E F3104308 09AA05F7 C9D1F57C 21B79207 A93D899A 60255BCC 790B269B 
+  91AB7D39 7CBA6264 9EAD68E5 E1B1859B 6873B170 B89DCD3D FBED4697 8B5194EC 
+  F886E220 6FC7AAE3 0DBBE150 DB868A3B 60EE5F46 8F3D6C21 9D737469 EE35EF41 
+  1D765643 8023A2A9 5C284763 38088E22 BE58A7C5 9FE567A9 5EF3E990 CB9F4E6E 
+  786F9322 E2F7940C C0D9F1E4 A56F86C3 AEB650DB 922D6921 2121229F 47BD2BA7 
+  4F5D94E8 993EFC67 C7957FB3 29CC39C7 09186D33 51EFB878 50AE93A6 85A3A0DB 
+  E56419C8 89B10203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 148C5DE8 9B939E39 4C11AD1E D882AE3F F8CF4F8E 
+  DC301D06 03551D0E 04160414 8C5DE89B 939E394C 11AD1ED8 82AE3FF8 CF4F8EDC 
+  300D0609 2A864886 F70D0101 05050003 82010100 6FEB4C5B 5C4022D3 4C447992 
+  97A71CF0 BEAAB424 AF58F3F3 2E773027 30C881CA 429B1247 1DAA0349 CDEB0B4B 
+  75AB1765 69D3A1D5 D4F3D971 ED681F8F 527AA606 1A313DC1 DC2D5BDA E707AD5A 
+  AD78DF3F 7B26D2DA BEB4266E 90066D79 F9612CA0 C098193D A6D4B305 54F4E333 
+  E8F880CC 185927A6 DD73AC0F A97B56C4 17EAB5AA 4C945480 9DA20E0D 6E9C684D 
+  D6B58A01 861B6472 D95C7F9A 50FB1A3F 691309E8 E88B33C3 774868A1 5AC3D6E9 
+  DDC96D93 734C9F58 711B0E8B B22F9632 7D49F1B0 44C880E9 21359728 6204C97E 
+  C0161A2E 8E004910 28ED8A96 9B0B7841 561AC7B8 009B740C 568331ED 307B63BD 
+  62586484 C6883E30 F4ADD42B 09DA0A63 E86199E2
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9H7O0P2HV3Y
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+username roger privilege 15 password 0 cisco
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface GigabitEthernet1
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ ip address 192.168.1.222 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+no ip http server
+ip http secure-server
+ip http client source-interface GigabitEthernet4
+ip tftp source-interface GigabitEthernet4
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+!
+!
+!
+end

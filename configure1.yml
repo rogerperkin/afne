@@ -1,0 +1,22 @@
+---
+## Playbook to configure things 
+
+- hosts: CSR_Routers 
+
+  tasks: 
+    - name: Configure a single command 
+      ios_config: 
+        lines: ntp server 9.9.9.9
+
+    - name: Configure multiple lines of code from text file 
+      ios_config: 
+        src: "~/afne/configs/config1.txt"  
+
+    - name: Configure from Jinja2 Template 
+      ios_config: 
+        src: "./configure1.j2" 
+
+    - name: Save the config Always 
+      ios_config: 
+        save_when: always 
+

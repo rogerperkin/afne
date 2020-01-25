@@ -1,0 +1,7 @@
+---
+# CSR-1 Specific Connectivity Information
+
+ansible_user: "roger"
+
+hostname:
+  name: CSR-ONE
